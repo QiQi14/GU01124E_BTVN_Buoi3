@@ -23,7 +23,8 @@ internal class Program
         string identify = timeInput.Substring(8, 2);
         string hour = timeInput.Substring(0, 2);
         int hour2 = Convert.ToInt32(hour);
-        if (identify == "PM") { hour = Convert.ToString(hour2 + 12); }
+        if (identify == "PM" & hour2<12) { hour = Convert.ToString(hour2 + 12); }
+        if (identify == "AM" & hour2 == 12) { hour = "00"; }
 
         string minute = timeInput.Substring(3, 2);
         string second = timeInput.Substring(6, 2);
